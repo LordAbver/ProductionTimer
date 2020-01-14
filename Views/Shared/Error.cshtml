@@ -1,0 +1,49 @@
+﻿@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+@using System.Security
+@using Harris.Automation.ADC.Logger
+@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+    var ex = Model.Exception;
+    if (ex is SecurityException)
+    {
+        //ServiceLogger.Notice("Security exception: " + ex.Message);
+    }
+    else
+    {
+        ServiceLogger.Error("Application raised the unhandled exception: " + ex.Message, ex);
+    }
+}
+
+<div id="error_container">
+    <div class="no_channels">
+    <div id="error_header">Sorry, an error occurred while processing your request.<br><br></div>
+    <div id="error_message">(@Model.Exception.Message)</div>
+    </div>
+</div>
+
+    <!-- SECTIONS -->
+@section BasicCSS
+{    
+       <link href="@Url.Content("~/css/page_loading.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/base.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/time.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/production_timer.css")" rel="stylesheet" type="text/css" /> 
+}
+@section HomeScript {
+    
+}
+@section Footer {
+      <div class="bottom_status_bar">
+        <div class="options_toggle index_view_options">
+                <a href="#Options" title="@Url.Action("Index", "Options")"><img src="@Url.Content("~/images/buttons/options_off.png")" width="54" height="54" alt="options" style="margin-top:4px"></a>
+        </div>
+        <div class="separator"></div>
+    </div>
+}
+
+@section OptionsScript {
+
+}

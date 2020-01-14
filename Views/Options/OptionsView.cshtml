@@ -1,0 +1,136 @@
+﻿@using ProductionTimerCore
+@model ProductionTimerCore.Models.OptionsModel
+@{
+    ViewBag.Title = "OptionsView";
+}
+
+@{
+    <div class="options_header">
+        OPTIONS</div>
+    <div class="blackline">
+    </div>
+    <div class="greyline">
+    </div>
+    <div class="option_div_center">
+        <table class="main_options">
+            <tr>
+                <td>
+                    <span class="simple_text">Available Device Servers:</span>
+                </td>
+                <td class="vertical_separator">
+                    <!--separator-->
+                </td>
+                <td>
+                    @{
+                        var mySelectItems = new List<SelectListItem>() {new SelectListItem() {Text = "", Value = "", Selected = String.IsNullOrWhiteSpace(Model.Server)}};
+                        if (Model.AvailableDeviceServers != null && !Model.AvailableDeviceServers.Contains(Model.Server) && !String.IsNullOrWhiteSpace(Model.Server))
+                        {
+                            mySelectItems.Add(new SelectListItem() {Text = Model.Server, Value = Model.Server, Selected = true});
+                        }
+                        if (Model.AvailableDeviceServers != null && Model.AvailableDeviceServers.Any())
+                        {
+                            foreach (var ds in Model.AvailableDeviceServers)
+                            {
+                                var isSelected = ds == Model.Server;
+                                var item = new SelectListItem {Text = ds, Value = ds, Selected = isSelected};
+                                mySelectItems.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("options.Server", mySelectItems, new Dictionary<string, object> {{"class", "select_field"}, {"id", "serversBox"}, {"onChange", "ProductionTimer.getListNames(this);"}})
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" class="horizontal_separator">
+                </td>
+                <td class="vertical_separator">
+                    <!--separator-->
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="simple_text">Playlists:</span>
+                </td>
+                <td class="vertical_separator">
+                    <!--separator-->
+                </td>
+                <td>
+                    @{
+                        var lists = new List<SelectListItem>();
+                        if (Model.AvailableLists != null && !Model.AvailableLists.Any(item => item.Key == Model.List) && Model.List > 0)
+                        {
+                            lists.Add(new SelectListItem() {Text = Model.List.ToString(), Value = Model.List.ToString(), Selected = true});
+                        }
+                        if (Model.AvailableLists != null && Model.AvailableLists.Any())
+                        {
+                            foreach (var l in Model.AvailableLists)
+                            {
+                                var isSelected = l.Key == Model.List;
+                                var item = new SelectListItem {Text = l.Value, Value = l.Key.ToString(), Selected = isSelected};
+                                lists.Add(item);
+                            }
+                        }
+                        @Html.DropDownList("options.List", lists, new Dictionary<string, object> {{"class", "select_field"}, {"id", "listsBox"}})
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" class="horizontal_separator">
+                </td>
+                <td class="vertical_separator">
+                    <!--separator-->
+                </td>
+                <td>
+                </td>
+            </tr>
+            @*<tr>
+                <td>
+                    <span class="simple_text">Timers update interval:</span>
+                </td>
+                <td class="vertical_separator">
+                    <!--separator-->
+                </td>
+                <td>
+                    @Html.TextBox("options.TimersUpdateInterval", Model.TimersUpdateInterval, new Dictionary<string, object> {{"class", "input_field"}, {"id", "timersUpdateIntervalBox"}})
+                </td>
+            </tr>     *@       
+        </table>
+    </div>
+    <div class="blackline noTBmargin">
+    </div>
+    <div class="greyline">
+    </div>
+    @*<div class="availdable_contents">
+        <div id="availableContents" class="content_rows">
+            <div class="new_content_text">
+                Commercial Content Identifiers:
+                <input type="text" class="input_field" />
+                <button type="button" class="button addremove" onclick=" ">
+                    Add</button>
+            </div>
+            <div class="content_conatiner">
+                <div class="devices" id="server_area">
+                    <!---Content blocks will be created here-->
+                    <button class="button content_btn" id="" onclick=" " type="button">
+                        Content1</button>
+                    <input class="hidden_input" id="" name="" value="" />
+                    <input class="hidden_input" id="" name="" value="" />
+                    <button class="button content_btn" id="Button1" onclick="" type="button">
+                        Content2</button>
+                    <input class="hidden_input" id="Text1" name="" value="" />
+                    <input class="hidden_input" id="Text2" name="" value="" />
+                    <button class="button content_btn" id="Button2" onclick="" type="button">
+                        Content3</button>
+                    <input class="hidden_input" id="Text3" name="" value="" />
+                    <input class="hidden_input" id="Text4" name="" value="" />
+                </div>
+            </div>
+        </div>
+    </div>*@
+    @*<div class="blackline">
+    </div>
+    <div class="greyline">
+    </div>*@
+}

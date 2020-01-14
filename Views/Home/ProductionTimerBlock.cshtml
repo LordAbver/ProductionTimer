@@ -1,0 +1,233 @@
+﻿@{
+    <div class="production_timer_block_position">
+        <div class="timer_tab">
+            <div class="pt_list_state_indicator" id="list_state_indicator"></div>
+            <div id="name_tab" class="server_name_tab">Loading...</div>
+            <!--SYSTEM TIME-->
+            <div  class="pt_time_container sys_time_b">
+                <div class="pt_icon_container pt_icon_nbd pt_st"></div>
+                <div class="pt_timer_header pt_systimer_head">SYSTEM TIME</div>
+                <div id="system_time_timer" class="pt_timer_cd_block">
+                    <div class="pt_timer_cd_block_container">
+                        <div class="pt_time_number pt_number_st">0</div>
+                        <div class="pt_time_number pt_number_st">0</div>
+                        <div class="pt_time_splitter_container">
+                            <div class="pt_time_splitter">
+                            </div>
+                            <div class="pt_time_splitter">
+                            </div>
+                        </div>
+                        <div class="pt_time_number pt_number_st">0</div>
+                        <div class="pt_time_number pt_number_st">0</div>
+                        <div class="pt_time_splitter_container">
+                            <div class="pt_time_splitter">
+                            </div>
+                            <div class="pt_time_splitter">
+                            </div>
+                        </div>
+                        <div class="pt_time_number pt_number_st">0</div>
+                        <div class="pt_time_number pt_number_st">0</div>                        
+                    </div>
+                </div>
+            </div>
+            <!--/SYSTEM TIME-->
+        </div>
+        <div id="timer_container" class="production_timer_block_container" data-hash="0" data-page="0" data-page-count="0">
+            <div class="overlay">
+                <div class="production_timer_block_left">
+                    <!--BREAK DURATION-->
+                    <div class="pt_time_container">
+                        <div class="pt_icon_container pt_icon_nbd">
+                        </div>
+                        <div class="pt_timer_header pt_systimer">BREAK DURATION</div>
+                        <div id="break_duration_timer_id" class="pt_timer_cd_block pt_timer_gray">
+                            <div class="pt_timer_cd_block_container pt_btimer">
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/BREAK DURATION-->
+                    <!--FIVE SECONDS WARNING BLOCK-->
+                    <div class="five_seconds_warning" id="fswBlock">
+                        <div class="five_seconds_lamp"></div>
+                        <div class="five_seconds_lamp"></div>
+                        <div class="five_seconds_lamp"></div>
+                        <div class="five_seconds_lamp"></div>
+                        <div class="five_seconds_lamp"></div>
+                    </div>
+                    <!--/FIVE SECONDS WARNING BLOCK-->
+                    <!--TIME TO RETURN-->
+                    <div class="pt_time_container pt_ttr">
+                        <div class="pt_icon_container pt_icon_ttne" id="time_to_return_icon_id">
+                        </div>
+                        <div class="pt_timer_header pt_systimer">TIME TO RETURN</div>
+                        <div id="time_to_return_timer_id" class="pt_timer_cd_block pt_timer_gray">
+                            <div class="pt_timer_cd_block_container pt_btimer">
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/TIME TO RETURN-->           
+                </div>
+                <div class="pt_data_grid_block">
+                    <div class="production_timer_header_container">
+                        <!--DATA GRID HEADER-->
+                        <div class="Header">
+                            <div class="production_timer_grid_columns on_air">
+                                <div class="production_timer_column_spacer">On Air</div>
+                            </div>
+                            <div class="production_timer_grid_columns status">
+                                <div class="production_timer_column_spacer">&nbsp;</div>
+                            </div>
+                            <div class="production_timer_grid_columns id">
+                                <div class="production_timer_column_spacer">ID</div>
+                            </div>
+                            <div class="production_timer_grid_columns title_cell">
+                                <div class="production_timer_column_spacer">Title</div>
+                            </div>
+                            <div class="production_timer_grid_columns dur">
+                                <div class="production_timer_column_spacer">DUR</div>
+                            </div>
+                        </div>
+                        <!--DATA GRID HEADER-->
+                    </div>
+                    <!--DATA GRID-->
+                    <div class="production_timer_data_grid" id="dg_scroll">
+                        <!--BREAKS--> 
+                    </div>
+                    <!--/DATA GRID-->
+                    <!--DATA GRID FOOTER-->
+                <div class="pt_events_grid_footer">
+                    <div class="break_duration_timer_block timer_tab">
+                        <!--BREAK DURATION TIME-->
+                        <div id="break_duration_grid_timer_container" class="pt_time_container sys_time_b">
+                            <div class="pt_icon_container pt_icon_nbd pt_st"></div>
+                            <div id="break_duration_grid_timer_header" class="pt_timer_header pt_systimer_head">BREAK DURATION</div>
+                            <div id="break_duration_grid_timer_id" class="pt_timer_cd_block">
+                                <div class="pt_timer_cd_block_container">
+                                    <div class="pt_time_number pt_number_st">0</div>
+                                    <div class="pt_time_number pt_number_st">0</div>
+                                    <div class="pt_time_splitter_container">
+                                        <div class="pt_time_splitter">
+                                        </div>
+                                        <div class="pt_time_splitter">
+                                        </div>
+                                    </div>
+                                    <div class="pt_time_number pt_number_st">0</div>
+                                    <div class="pt_time_number pt_number_st">0</div>
+                                    <div class="pt_time_splitter_container">
+                                        <div class="pt_time_splitter">
+                                        </div>
+                                        <div class="pt_time_splitter">
+                                        </div>
+                                    </div>
+                                    <div class="pt_time_number pt_number_st">0</div>
+                                    <div class="pt_time_number pt_number_st">0</div>                        
+                                </div>
+                            </div>
+                        </div>
+                        <!--/BREAK DURATION TIME-->
+                    </div>  
+                </div>
+                <!--/DATA GRID FOOTER-->
+                </div>
+            </div>
+            <!--PROGRAM TIMERS/PAGE SWITCHING-->
+            <div class="pt_switching_block">
+                    <!--PROGRAM DURATION-->
+                    <div class="pt_time_container">
+                        <div class="pt_icon_container pt_icon_nbd">
+                        </div>
+                        <div class="pt_timer_header pt_systimer">PROGRAM DURATION</div>
+                        <div id="program_duration_timer_id" class="pt_timer_cd_block pt_timer_gray">
+                            <div class="pt_timer_cd_block_container pt_btimer">
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/PROGRAM DURATION-->
+                    <!--PROGRAM END-->
+                    <div class="pt_time_container pt_sep">
+                        <div class="pt_icon_container pt_icon_ttne">
+                        </div>
+                        <div class="pt_timer_header pt_systimer">PROGRAM END</div>
+                        <div id="program_end_timer_id" class="pt_timer_cd_block pt_timer_gray">
+                            <div class="pt_timer_cd_block_container pt_btimer">
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_splitter_container">
+                                    <div class="pt_time_splitter"></div>
+                                    <div class="pt_time_splitter"></div>
+                                </div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                                <div class="pt_time_number pt_number_st">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/PROGRAM END-->
+                    <!--PAGE SWITCHING BLOCK-->
+                    <div class="pt_switching_block">
+                        <div class="next_previous_block">
+                            <div id="home_break" class="home_block home_icon" title="Return to current break"></div>
+                            <div id="prev_page" class="arrow_block arrow_left_icon"></div>
+                            <div id="page_info" class="indexes_text">1/1</div>
+                            <div id="next_page" class="arrow_block arrow_right_icon"></div>
+                        </div>  
+                    </div>
+                    <!--/PAGE SWITCHING BLOCK-->
+            <!--/PROGRAM TIMERS/PAGE SWITCHING-->
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        ProductionTimer.enableDataUpdate();
+    });
+</script>
+}

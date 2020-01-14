@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E362FD2A-7C5B-420E-A33A-ACC43EB6846F}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProductionTimer</RootNamespace>
+    <AssemblyName>ProductionTimer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugLicense|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseLicense|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\CommercialValidationDashboard.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Harris.Automation.ADC.Logger, Version=5.4.4.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Modules\ProductionTimerCore\lib\Harris.Automation.ADC.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="Harris.Automation.ADC.Services.SecurityServiceClient">
+      <HintPath>..\Modules\ProductionTimerCore\lib\Harris.Automation.ADC.Services.SecurityServiceClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Build\Version.cs">
+      <Link>Version.cs</Link>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OptionsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\base.css" />
+    <Content Include="css\page_loading.css" />
+    <Content Include="css\production_timer.css" />
+    <Content Include="css\time.css" />
+    <Content Include="images\arrows\arrow_left_pressed%402x.png" />
+    <Content Include="images\arrows\arrow_left_pressed.png" />
+    <Content Include="images\arrows\arrow_right_pressed%402x.png" />
+    <Content Include="images\arrows\arrow_right_pressed.png" />
+    <Content Include="Global.asax" />
+    <Content Include="images\buttons\close%402x.png" />
+    <Content Include="images\buttons\close.png" />
+    <Content Include="images\buttons\close_over%402x.png" />
+    <Content Include="images\buttons\close_over.png" />
+    <Content Include="images\buttons\close_pressed%402x.png" />
+    <Content Include="images\buttons\close_pressed.png" />
+    <Content Include="images\buttons\home_icon_door_fill_45X45.png" />
+    <Content Include="images\buttons\next_error_normal%402x.png" />
+    <Content Include="images\buttons\next_error_pressed%402x.png" />
+    <Content Include="images\buttons\options_off%402x.png" />
+    <Content Include="images\buttons\options_off.png" />
+    <Content Include="images\buttons\options_off_hires.png" />
+    <Content Include="images\buttons\options_on%402x.png" />
+    <Content Include="images\buttons\options_on.png" />
+    <Content Include="images\buttons\options_on_hires.png" />
+    <Content Include="images\buttons\prev_error_normal%402x.png" />
+    <Content Include="images\buttons\prev_error_pressed%402x.png" />
+    <Content Include="images\dropdown\dropdown_arrow%402x.png" />
+    <Content Include="images\dropdown\dropdown_arrow.png" />
+    <Content Include="images\event_status\evst_cued_icon%402x.png" />
+    <Content Include="images\event_status\evst_cued_icon.png" />
+    <Content Include="images\event_status\evst_cueing%402x.png" />
+    <Content Include="images\event_status\evst_cueing.png" />
+    <Content Include="images\event_status\evst_done_event_icon%402x.png" />
+    <Content Include="images\event_status\evst_done_event_icon.png" />
+    <Content Include="images\event_status\evst_error_icon%402x.png" />
+    <Content Include="images\event_status\evst_error_icon.png" />
+    <Content Include="images\event_status\evst_ffd%402x.png" />
+    <Content Include="images\event_status\evst_ffd.png" />
+    <Content Include="images\event_status\evst_missed_icon%402x.png" />
+    <Content Include="images\event_status\evst_missed_icon.png" />
+    <Content Include="images\event_status\evst_playing_icon%402x.png" />
+    <Content Include="images\event_status\evst_playing_icon.png" />
+    <Content Include="images\event_status\evst_postroll_icon%402x.png" />
+    <Content Include="images\event_status\evst_postroll_icon.png" />
+    <Content Include="images\event_status\evst_preroll_icon%402x.png" />
+    <Content Include="images\event_status\evst_preroll_icon.png" />
+    <Content Include="images\event_status\evst_ready_icon%402x.png" />
+    <Content Include="images\event_status\evst_ready_icon.png" />
+    <Content Include="images\event_status\evst_recording%402x.png" />
+    <Content Include="images\event_status\evst_recording.png" />
+    <Content Include="images\event_status\evst_rewinding%402x.png" />
+    <Content Include="images\event_status\evst_rewinding.png" />
+    <Content Include="images\event_status\evst_still%402x.png" />
+    <Content Include="images\event_status\evst_still.png" />
+    <Content Include="images\event_status\evst_stop%402x.png" />
+    <Content Include="images\event_status\evst_stop.png" />
+    <Content Include="images\icons\next_break_dur_icon.png" />
+    <Content Include="images\icons\time_to_next_break_icon.png" />
+    <Content Include="images\icons\time_to_return_upcount_icon.png" />
+    <Content Include="Scripts\Const.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\ProductionTimer.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Modules\ProductionTimerCore\ProductionTimerCore.csproj">
+      <Project>{4FD5BF51-5C64-411B-A5D3-E58DC4AD073D}</Project>
+      <Name>ProductionTimerCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Options\Index.cshtml" />
+    <Content Include="Views\Options\OptionsView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ProductionTimerBlock.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59184</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PT</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

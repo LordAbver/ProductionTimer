@@ -1,0 +1,16 @@
+﻿@model ProductionTimerCore.Models.OptionsModel
+@{
+    ViewBag.Title = "Options";
+}
+
+@using (Html.BeginForm("Save", "Options", FormMethod.Post, new { id = "Options" }))
+{
+
+    Html.RenderPartial("OptionsView", Model);
+
+    <div class="ApplyCancel_container">
+        <input id="cancel_button" type="button" class="button ApplyCancel" value="Cancel"/>
+        <input id="apply_button" type="button" class="button ApplyCancel" value="Apply"/>
+        <span id="applyTextBottom" class="applyText" style="display: none">Saving...</span>
+    </div>
+}

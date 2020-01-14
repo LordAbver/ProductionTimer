@@ -1,0 +1,322 @@
+﻿@charset "utf-8";
+/*
+THIS STYLESHEET CONTAINS STYLES FOR TIMECODE DECORATION ONLY
+
+*/
+.StatusTimeDisplay_header {
+	height: 16px;
+	width: 100%;
+	display: block;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #909090;
+	text-align: left;
+	padding-top: 8px;
+	/*padding-left: 16px;*/
+	padding-bottom: 2px;
+	padding-left: 18px;
+    text-align: left;
+}
+.time_to_close 
+{
+	height: 17px;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	background: -webkit-linear-gradient(top, #e7e7e7, #c3c3c3);
+	background-color: #e7e7e7;
+	box-shadow: inset 0px 0px 0px 1px #7f7f7f;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+    padding: 2px;
+    margin-top: 0px;
+    float: right;
+    width: 200px;
+}
+.StatusTimeDisplay_body {
+	height: auto;
+	/*width: 100%;*/
+	margin-left: 6px;
+	margin-top: 2px;
+	margin-bottom: 8px;
+	padding-left: 8px;
+	display: block;
+	float: left;
+}
+.no_side_paddings {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+.no_margin {
+	margin: 0px 0px 0px 0px;
+}
+.Time_Number {
+	height: 24px;
+	width: 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -12px;
+	margin-left: -7px;
+	/*background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.6, #303030), color-stop(0.83, #525252));*/
+	
+	background-color: #525252;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#525252), to(#303030));
+    background-image: -webkit-linear-gradient(top, #525252, #303030);
+    background-image: -moz-linear-gradient(top, #525252, #303030);
+    background-image: -ms-linear-gradient(top, #525252, #303030);
+    background-image: -o-linear-gradient(top, #525252, #303030);
+    background-image: linear-gradient(to bottom, #525252, #303030);
+	
+	border-radius: 3px;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+}
+.Time_Number_border {
+	height: 26px;
+	width: 16px;
+	/*background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0, #6c6c6c), color-stop(0.2, #272727));*/
+	
+	background-color: #6c6c6c;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#272727), to(#6c6c6c));
+    background-image: -webkit-linear-gradient(top, #272727, #6c6c6c);
+    background-image: -moz-linear-gradient(top, #272727, #6c6c6c);
+    background-image: -ms-linear-gradient(top, #272727, #6c6c6c);
+    background-image: -o-linear-gradient(top, #272727, #6c6c6c);
+    background-image: linear-gradient(to bottom, #272727, #6c6c6c);
+	
+	border-radius: 3px;
+	margin: 0px auto;
+	display: block;
+	position: relative;
+	float: left;
+}
+.border_big3d {
+    height: 50px;
+    width: 34px;
+}
+.number_big3d {
+    font-size: 42px;
+    height: 45px;
+    margin-left: -15px;
+    margin-top: -22px;
+    width: 30px;
+}
+.colon_big3d{
+margin-top: 11px;
+}
+.Time_Number_Colon {
+	height: 26px;
+	width: 6px;
+	display: block;
+	position: relative;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+}
+
+.tc_marker
+{
+    background-image: url("../images/other/marker7.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.SysTime_container {
+	height: 100%;
+	width: auto;
+	float: left;
+}
+
+.red_number .Time_Number {
+	background-color: #6c6c6c;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6c6c6c), to(#FF0000));
+    background-image: -webkit-linear-gradient(top, #6c6c6c, #FF0000);
+    background-image: -moz-linear-gradient(top, #6c6c6c, #FF0000);
+    background-image: -ms-linear-gradient(top, #6c6c6c, #FF0000);
+    background-image: -o-linear-gradient(top, #6c6c6c, #FF0000);
+    background-image: linear-gradient(to bottom, #6c6c6c, #FF0000);
+}
+
+.red_number_conversely .Time_Number {
+	background-color: #FF0000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#303030));
+    background-image: -webkit-linear-gradient(top, #FF0000, #303030);
+    background-image: -moz-linear-gradient(top, #FF0000, #303030);
+    background-image: -ms-linear-gradient(top, #FF0000, #303030);
+    background-image: -o-linear-gradient(top, #FF0000, #303030);
+    background-image: linear-gradient(to bottom, #FF0000, #303030);
+}
+
+/*TIMERS BASE*/
+.pt_number_st
+{
+    border-radius:6px; 
+    background-color:#525252;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#525252), to(#303030));
+	background-image: -webkit-linear-gradient(top, #525252, #303030);
+	background-image: -moz-linear-gradient(top, #525252, #303030);
+	background-image: -ms-linear-gradient(top, #525252, #303030);
+	background-image: -o-linear-gradient(top, #525252, #303030);
+	background-image: linear-gradient(to bottom, #525252, #303030);
+}
+.pt_time_splitter{
+    width:10px;
+    height:10px;
+    border: 1px solid #3B3B3B;
+    border-radius:10px;
+    background-color:#ffffff;
+    margin-top:30px;
+}
+.pt_time_number{
+    float:left;
+    width:65px;
+    margin-top:10px;
+    height:112px;
+    /*border: 1px solid #3B3B3B;*/
+    box-shadow: 0px 0px 3px 1px #171819 inset;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    color: #ffffff;
+    text-align: center;
+}
+.pt_st {
+    margin-top: 0px !important;
+}
+.pt_icon_container{
+    height:30px;
+    width:28px;
+    float:left;
+    background-repeat:no-repeat;
+    backround-position:center;
+    margin-top: 3px;
+    margin-left:2px;
+}
+.pt_icon_nbd{
+background-image:url(../images/icons/next_break_dur_icon.png);
+}
+.pt_icon_upcount{
+background-image:url(../images/icons/time_to_next_break_upcount_icon.png);
+    margin-top: 13px;
+}
+.pt_time_to_return_timer  {
+    margin-top: 10px;
+}
+.pt_icon_ttne{
+    background-image:url(../images/icons/time_to_next_break_icon.png);
+}
+.pt_icon_upcount{
+background-image:url(../images/icons/time_to_return_upcount_icon.png);
+    margin-top: 13px;
+}
+.pt_systimer {
+    float: left;
+    margin-top: 7px;
+}
+.pt_systimer_head {
+    float: left;
+    font-size: 18px !important;
+    margin: 0px 0px 0px 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.pt_timer_header
+{
+color: #909090;    
+font-family: "Arial", "Helvetica", sans-serif;
+font-size: 20px;
+ float: left;     
+}
+.pt_sep {
+    margin-left: 5px;
+}
+.pt_time_container
+ {
+ background-color: #2c2c2c;
+ display: block;
+ float: right;
+ }
+ .pt_sys_time_cont {
+     margin-top: 0%;
+ }
+/*SECTION START*/
+.pt_time_container .pt_time_number {
+    font-size: 64px;
+    width: 54px;
+    height: 70px;
+    margin-top: 0px;
+}
+.pt_time_container .pt_timer_cd_block{
+    width: 335px;
+    height: 81px;
+    float: left;
+    background-color: #2c2c2c;
+    border: 1px solid #2c2c2c;
+}
+ .pt_timer_cd_block_container {
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+.pt_btimer {
+    margin-top: 5px;
+}
+.pt_time_container .pt_time_splitter {
+    width: 3px;
+    height: 3px;
+    margin-top: 18px;
+}
+.pt_time_container .pt_time_splitter_container {
+    width: 5px;
+    margin-top:6px;
+    float: left;
+}
+/* SECTION END*/
+
+/*SECTION START*/
+.pt_events_grid_footer .sys_time_b {
+    margin-right: 0px;
+}
+.sys_time_b {
+    margin-right: 17px;
+    margin-top:5px;
+}
+.timer_tab .pt_time_number {
+font-size: 28px;
+width: 26px;
+height: 34px;
+margin-top: 0px;
+}
+
+.timer_tab .pt_timer_cd_block{
+    width: 180px;
+    height: 100%;
+    float: left;
+    background-color: #2c2c2c;
+    border: 1px solid #2c2c2c;
+}
+.timer_tab .pt_timer_cd_block_container {
+    width: 100%;
+    height: 100%;
+    margin-left: 0px;
+}
+
+.timer_tab .pt_time_splitter {
+    width: 3px;
+    height: 3px;
+    margin-top: 3px;
+}
+.timer_tab .pt_time_splitter_container {
+    width: 5px;
+    margin-top:9px;
+    float: left;
+}
+/* SECTION END*/

@@ -1,0 +1,147 @@
+﻿@model ProductionTimerCore.Models.OptionsModel
+@{
+    ViewBag.Title = "ADC Production timer";
+    if (Model!=null && !String.IsNullOrWhiteSpace(Model.Server) && Model.List > 0)
+    {
+    Html.RenderPartial("ProductionTimerBlock");
+    }
+    else
+    {
+        <div class="no_channels">There is no configured channels. <br/>
+            Please press the 
+            <img src="@Url.Content("~/images/buttons/options_off.png")" width="54" height="54" alt="options" style="margin-top: 4px">
+            button to configure the application.
+        </div>
+    }
+}
+
+    <!-- SECTIONS -->
+@section BasicCSS
+{    
+        <link href="@Url.Content("~/css/page_loading.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/base.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/time.css")" rel="stylesheet" type="text/css" /> 
+        <link href="@Url.Content("~/css/production_timer.css")" rel="stylesheet" type="text/css" /> 
+}
+@section HomeScript {
+    <script type="text/javascript">
+        $(document).on("mouseup", "#prev_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+        $(document).on("mouseout", "#prev_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+        $(document).on("mousedown", "#prev_page", function (e) {
+            longHitAction(function () { ProductionTimer.prevPage(); });
+            return false;
+        });
+        $(document).on("touchstart", "#prev_page", function (e) {
+            longHitAction(function () { ProductionTimer.prevPage(); });
+            return false;
+        });
+        $(document).on("touchend", "#prev_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+
+
+        $(document).on("mouseup", "#next_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+        $(document).on("mouseout", "#next_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+        $(document).on("mousedown", "#next_page", function (e) {
+            longHitAction(function () { ProductionTimer.nextPage(); });
+            return false;
+        });
+        $(document).on("touchstart", "#next_page", function (e) {
+            longHitAction(function () { ProductionTimer.nextPage(); });
+            return false;
+        });
+        $(document).on("touchend", "#next_page", function (e) {
+            clearLongHitAction();
+            return false;
+        });
+        $(document).on(ProductionTimer.hitEvent(), "#home_break", function (e) {
+            ProductionTimer.homePage();
+        });
+        
+        
+
+
+        var pressTimer;
+        var pressTimeout;
+
+        var timeToStart = 300;
+        var iterationTimeout = 100;
+
+        function longHitAction(action) {
+            action();
+
+            pressTimeout = window.setTimeout(function () {
+                pressTimer = window.setInterval(function () {
+                    action();
+                }, iterationTimeout);
+            }, timeToStart);
+        }
+
+        function clearLongHitAction() {
+            clearInterval(pressTimer);
+            clearTimeout(pressTimeout);
+        }
+    </script>
+}
+@section Footer {
+    
+    <div class="bottom_status_bar">
+        <div class="options_toggle index_view_options">
+                <a href="#Options" title="@Url.Action("Index", "Options")"><img src="@Url.Content("~/images/buttons/options_off.png")" width="54" height="54" alt="options" style="margin-top:4px"></a>
+        </div>
+        <div class="separator"></div>
+    </div>
+
+        
+}
+
+@section OptionsScript {
+    <script type="text/javascript">
+        var messageDelay = 6000;
+        $(document).on("click", "#apply_button", function () {
+            clearTimeout(window.saveOptionResultMessageId);
+            window.saveOptionResultMessageId = null;
+            $("#apply_button").hide();
+            $("#applyTextBottom").show();
+
+            $.post($("#Options").attr("action"), $("#Options").serialize(), function (result, textStatus, jqXHR) {
+
+                return false;
+            })
+                .success(function () {
+                    $(".options_header").text("OPTIONS SUCCESSFULLY SAVED");
+                })
+                .error(function (result, textStatus, jqXHR) {
+                    $(".options_header").text("OPTIONS HAS NOT BEEN SAVED (HTTP Error " + result.status + ": " + jqXHR + ")");
+                    $("#applyTextBottom").hide();
+                    $("#apply_button").show();
+                })
+                .complete(function () {
+                    if (!window.saveOptionResultMessageId) {
+                        window.saveOptionResultMessageId = setTimeout(function () {
+                            $(".options_header").text("OPTIONS");
+                        }, messageDelay);
+                    }
+                    $("#applyTextBottom").hide();
+                    $("#apply_button").show();
+                });
+            });
+
+        $(document).on(ProductionTimer.hitEvent(), "#cancel_button", function () {
+            window.location.hash = $('.options_toggle a').attr("href");
+        });
+    </script>
+}
